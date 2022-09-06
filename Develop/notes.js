@@ -15,3 +15,29 @@ app.listen(port, function(){
     console.log(dataInput.length);
 })
 
+app.get('/',function(req,res){
+    res.sendFile(path.join(__dirname,'/public/index.html'));
+})
+
+app.get('/notes',function(req,res){
+    res.sendFile(path.join(__dirname,'/public/notes.html'));
+})
+
+app.get('/api/notes',function(req,res){
+    res.json(dataInput);
+})
+
+app.post('/api/notes',function(req,res){
+
+    const text = {
+        id: dataInput.length+1,
+        title: req.body.title,
+        text: req.body.text,
+    }
+    
+    dataInput.push(text);
+    let dataToWrite=JSON.stringify(dataInput);
+    fs.writeFileSync('./db/db.json',dataToWrite);
+    res.send(dataInput);
+    
+}) 
