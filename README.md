@@ -1,0 +1,1 @@
+# ideal-note-taker
