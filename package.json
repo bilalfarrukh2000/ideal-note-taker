@@ -1,0 +1,9 @@
+{
+  "dependencies": {
+    "express": "^4.18.1",
+    "fs": "^0.0.1-security"
+  },
+  "scripts": {
+    "start": "node ./Develop/notes.js"
+  }
+}
