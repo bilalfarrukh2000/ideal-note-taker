@@ -2,11 +2,12 @@ const fs = require ('fs');
 const express = require('express');
 const app = express();
 const path = require ('path');
-const port = process.env.port || 3000;
+const port = process.env.port || 8080;
+
 const addedNotes = fs.readFileSync('./Develop/db/db.json');
 const dataInput = JSON.parse(addedNotes);
 
-app.use(express)
+
 app.use(express.json());
 app.use(express.static("./Develop/public"));
 
@@ -24,7 +25,7 @@ app.get('/notes',function(req,res){
 })
 
 app.get('/api/notes',function(req,res){
-    res.json(dataInput);
+    res.sendFile(path.join(__dirname,'/db/db.json'));
 })
 
 app.post('/api/notes',function(req,res){
@@ -37,7 +38,8 @@ app.post('/api/notes',function(req,res){
     
     dataInput.push(text);
     let dataToWrite=JSON.stringify(dataInput);
-    fs.writeFileSync('./db/db.json',dataToWrite);
+    console.log(dataToWrite);
+    fs.writeFileSync('Develop/db/db.json',dataToWrite);
     res.send(dataInput);
     
 }) 
