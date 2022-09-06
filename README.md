@@ -3,9 +3,9 @@
 
 # Screenshots
 
-! [](./images/ScreenshotA.png)
-! [](./images/ScreenshotB.png)
-! [](./images/ScreenshotC.png)
+![](./images/ScreenshotA.png)
+![](./images/ScreenshotB.png)
+![](./images/ScreenshotC.png)
 
 
 # Links
