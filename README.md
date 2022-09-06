@@ -1,5 +1,7 @@
 # ideal-note-taker
+I have created an application that can be used to jot down notes. The user will be able to also save the notes.
 
+I used Express.js to create the endpoints. The user will be able to save as well as retrieve the notes that are created. 
 
 # Screenshots
 
