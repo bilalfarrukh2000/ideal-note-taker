@@ -2,7 +2,7 @@ const fs = require ('fs');
 const express = require('express');
 const app = express();
 const path = require ('path');
-const port = process.env.port || 8080;
+const port = process.env.PORT || 8080;
 
 const addedNotes = fs.readFileSync('./Develop/db/db.json');
 const dataInput = JSON.parse(addedNotes);
