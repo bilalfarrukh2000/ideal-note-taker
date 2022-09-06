@@ -3,7 +3,7 @@ const express = require('express');
 const app = express();
 const path = require ('path');
 const port = process.env.port || 3000;
-const addedNotes = fs.readFileSync('./Develop/db/db.json');
+const addedNotes = fs.readFileSync('./db/db.json');
 const dataInput = JSON.parse(addedNotes);
 
 app.use(express)
